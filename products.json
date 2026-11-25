@@ -1,0 +1,20 @@
+[
+  {
+    "sku": "NDL-01",
+    "productName": "บะหมี่กึ่งสำเร็จรูปรสต้มยำกุ้ง",
+    "description": "รสชาติเข้มข้น เผ็ดเปรี้ยว",
+    "price": 15,
+    "stock": 100,
+    "image": "images/noodle-tomyum.jpg",
+    "status": "Available"
+  },
+  {
+    "sku": "NDL-02",
+    "productName": "บะหมี่กึ่งสำเร็จรูปรสหมูสับ",
+    "description": "รสชาติกลมกล่อม หอมอร่อย",
+    "price": 15,
+    "stock": 100,
+    "image": "images/noodle-pork.jpg",
+    "status": "Available"
+  }
+]

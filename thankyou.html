@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ขอบคุณที่สั่งซื้อ – Noodle House</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .thanks {
+      min-height: calc(100vh - 72px);
+      display: flex;
+      align-items: center;
+    }
+    .thanks__card {
+      max-width: 560px;
+      margin-inline: auto;
+      padding: var(--space-5) var(--space-4);
+      text-align: center;
+      background: var(--color-white);
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .thanks__icon { margin-bottom: var(--space-2); font-size: 3.5rem; line-height: 1; }
+    .thanks__text { color: var(--color-text-muted); }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="logo">Noodle House</a>
+      <nav aria-label="เมนูหลัก">
+        <ul class="nav">
+          <li><a href="index.html">หน้าแรก</a></li>
+          <li><a href="product.html">สินค้า</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="thanks">
+    <div class="container">
+      <div class="thanks__card">
+        <div class="thanks__icon" aria-hidden="true">🍜</div>
+        <h1>ขอบคุณที่สั่งซื้อค่ะ!</h1>
+        <p class="thanks__text">
+          เราได้รับคำสั่งซื้อของคุณแล้ว เตรียมความหิวไว้ได้เลย<br>
+          บะหมี่ร้อนๆ กำลังเดินทางไปหาคุณ อร่อยง่าย ได้ทุกวันกับ Noodle House
+        </p>
+        <a href="index.html" class="btn">กลับหน้าแรก</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>&copy; 2026 Noodle House. สงวนลิขสิทธิ์</small>
+    </div>
+  </footer>
+
+</body>
+</html>

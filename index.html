@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Noodle House – อร่อยง่าย ได้ทุกวัน</title>
+  <meta name="description" content="Noodle House บะหมี่กึ่งสำเร็จรูป เส้นเหนียวนุ่ม น้ำซุปเข้มข้นถึงเครื่อง อิ่มอร่อยใน 3 นาที สบายกระเป๋า">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* สไตล์เฉพาะหน้าแรก (ใช้ตัวแปรสีจาก style.css) */
+    .hero {
+      min-height: calc(100vh - 72px);
+      display: flex;
+      align-items: center;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: var(--space-3);
+    }
+    .feature-card {
+      display: block;
+      padding: var(--space-3);
+      color: var(--color-text);
+      background: var(--color-white);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius);
+      transition: border-color var(--transition), transform var(--transition),
+                  box-shadow var(--transition);
+    }
+    .feature-card:hover {
+      color: var(--color-text);
+      border-color: var(--color-red);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+    .feature-card__icon {
+      display: block;
+      margin-bottom: var(--space-1);
+      font-size: 2.2rem;
+      line-height: 1;
+    }
+    .feature-card h3 { margin-bottom: 0.4rem; }
+    .feature-card p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+    }
+    .about-text {
+      max-width: 720px;
+      margin-inline: auto;
+      font-size: 1.05rem;
+      color: var(--color-text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="logo">Noodle House</a>
+      <nav aria-label="เมนูหลัก">
+        <ul class="nav">
+          <li><a href="index.html" class="active">หน้าแรก</a></li>
+          <li><a href="product.html">สินค้า</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div>
+          <span class="hero__eyebrow">บะหมี่กึ่งสำเร็จรูป</span>
+          <h1 class="hero__title">Noodle House – <span>อร่อยง่าย ได้ทุกวัน</span></h1>
+          <p class="hero__text">เติมพลังความอร่อยให้ทุกมื้อเร่งรีบของคุณใน 3 นาที</p>
+          <div class="hero__actions">
+            <a href="product.html" class="btn">ดูสินค้าทั้งหมด</a>
+          </div>
+        </div>
+        <div class="hero__image">
+          <img src="images/noodle-tomyum.jpg" alt="บะหมี่กึ่งสำเร็จรูป Noodle House"
+               onerror="this.closest('.hero__image').style.display='none'">
+        </div>
+      </div>
+    </section>
+
+    <!-- จุดเด่น -->
+    <section class="section section--white">
+      <div class="container">
+        <div class="section__header">
+          <h2>ทำไมต้อง Noodle House</h2>
+          <p>เลือกรสที่ใช่ แล้วอิ่มอร่อยได้ทันที</p>
+        </div>
+        <div class="feature-grid">
+          <a href="product.html" class="feature-card">
+            <span class="feature-card__icon" aria-hidden="true">🌶️</span>
+            <h3>แซ่บจัดจ้านต้มยำกุ้ง</h3>
+            <p>เผ็ดเปรี้ยว น้ำซุปเข้มข้น ถึงเครื่องทุกคำ</p>
+          </a>
+          <a href="product.html" class="feature-card">
+            <span class="feature-card__icon" aria-hidden="true">🍜</span>
+            <h3>กลมกล่อมหมูสับ</h3>
+            <p>รสชาติกลมกล่อม หอมอร่อย ทานได้ทุกวัย</p>
+          </a>
+          <a href="product.html" class="feature-card">
+            <span class="feature-card__icon" aria-hidden="true">⏱️</span>
+            <h3>อิ่มด่วนใน 3 นาที</h3>
+            <p>เหมาะกับมื้อเร่งรีบ ทั้งเที่ยงที่ออฟฟิศและคืนปั่นงานดึก</p>
+          </a>
+          <a href="product.html" class="feature-card">
+            <span class="feature-card__icon" aria-hidden="true">💰</span>
+            <h3>อร่อยคุ้มสบายกระเป๋า</h3>
+            <p>ราคาเป็นมิตร กินได้ทุกวันโดยไม่หนักกระเป๋า</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- เกี่ยวกับแบรนด์ -->
+    <section class="section">
+      <div class="container text-center">
+        <h2>เกี่ยวกับ Noodle House</h2>
+        <p class="about-text">
+          ไม่ว่าจะเป็นคืนปั่นงานดึกของชาวมหาลัย หรือมื้อเที่ยงสุดยุ่งของมนุษย์ออฟฟิศ
+          Noodle House เข้าใจทุกความหิวในวันที่เวลาไม่เป็นใจ
+          เราจึงตั้งใจรังสรรค์บะหมี่กึ่งสำเร็จรูปที่เส้นเหนียวนุ่ม น้ำซุปเข้มข้นถึงเครื่อง
+          ให้คุณอิ่มอร่อยได้ง่าย ๆ สบายกระเป๋า และพร้อมลุยต่อในทุกวัน
+        </p>
+        <a href="product.html" class="btn">ดูสินค้าทั้งหมด</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <a href="index.html" class="logo">Noodle House</a>
+      <p>อร่อยง่าย ได้ทุกวัน</p>
+      <small>&copy; 2026 Noodle House. สงวนลิขสิทธิ์</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

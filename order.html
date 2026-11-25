@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>สั่งซื้อสินค้า – Noodle House</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* สไตล์เฉพาะหน้าสั่งซื้อ */
+    .order-card {
+      max-width: 720px;
+      margin-inline: auto;
+      padding: var(--space-4);
+      background: var(--color-white);
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .form-section-title {
+      margin: var(--space-3) 0 var(--space-2);
+      padding-bottom: 0.4rem;
+      font-size: 1.1rem;
+      color: var(--color-red);
+      border-bottom: 2px dashed var(--color-border);
+    }
+    .form-section-title:first-of-type { margin-top: 0; }
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-2);
+    }
+    .form-control[readonly] {
+      background: var(--color-yellow-soft);
+      font-weight: 500;
+    }
+    .req { color: var(--color-red); }
+    @media (max-width: 600px) {
+      .order-card { padding: var(--space-3); }
+      .form-row { grid-template-columns: 1fr; gap: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="logo">Noodle House</a>
+      <nav aria-label="เมนูหลัก">
+        <ul class="nav">
+          <li><a href="index.html">หน้าแรก</a></li>
+          <li><a href="product.html">สินค้า</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section__header">
+          <h1>สั่งซื้อสินค้า</h1>
+          <p>กรอกข้อมูลให้ครบ แล้วกดยืนยันสั่งซื้อได้เลย</p>
+        </div>
+
+        <div class="order-card">
+          <form id="orderForm" novalidate>
+
+            <h2 class="form-section-title">รายการสินค้า</h2>
+
+            <div class="form-group">
+              <label for="items">รายการสินค้า</label>
+              <input type="text" id="items" name="items" class="form-control" readonly>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="quantity">จำนวน (ชิ้น) <span class="req">*</span></label>
+                <input type="number" id="quantity" name="quantity" class="form-control"
+                       min="1" step="1" value="1" inputmode="numeric">
+              </div>
+              <div class="form-group">
+                <label for="total">ยอดรวม (บาท)</label>
+                <input type="text" id="total" name="total" class="form-control" readonly>
+              </div>
+            </div>
+
+            <h2 class="form-section-title">ข้อมูลผู้สั่งซื้อ</h2>
+
+            <div class="form-group">
+              <label for="customerName">ชื่อลูกค้า <span class="req">*</span></label>
+              <input type="text" id="customerName" name="customerName" class="form-control"
+                     autocomplete="name" placeholder="เช่น สมชาย ใจดี">
+            </div>
+
+            <div class="form-group">
+              <label for="contact">เบอร์โทรศัพท์ <span class="req">*</span></label>
+              <input type="tel" id="contact" name="contact" class="form-control"
+                     autocomplete="tel" inputmode="tel" placeholder="เช่น 0812345678">
+            </div>
+
+            <h2 class="form-section-title">ที่อยู่จัดส่ง</h2>
+
+            <div class="form-group">
+              <label for="address">ที่อยู่ (บ้านเลขที่ ซอย ถนน) <span class="req">*</span></label>
+              <textarea id="address" name="address" class="form-control" rows="3"
+                        autocomplete="street-address"></textarea>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="subdistrict">ตำบล/แขวง <span class="req">*</span></label>
+                <input type="text" id="subdistrict" name="subdistrict" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="district">อำเภอ/เขต <span class="req">*</span></label>
+                <input type="text" id="district" name="district" class="form-control">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="province">จังหวัด <span class="req">*</span></label>
+                <input type="text" id="province" name="province" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="postalCode">รหัสไปรษณีย์ <span class="req">*</span></label>
+                <input type="text" id="postalCode" name="postalCode" class="form-control"
+                       inputmode="numeric" maxlength="5" autocomplete="postal-code"
+                       placeholder="เช่น 10110">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="note">หมายเหตุ</label>
+              <textarea id="note" name="note" class="form-control" rows="3"
+                        placeholder="เช่น ฝากไว้กับรปภ."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--block">ยืนยันสั่งซื้อ</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <a href="index.html" class="logo">Noodle House</a>
+      <p>อร่อยง่าย ได้ทุกวัน</p>
+      <small>&copy; 2026 Noodle House. สงวนลิขสิทธิ์</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

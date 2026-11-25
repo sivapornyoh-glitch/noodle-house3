@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>จัดการคำสั่งซื้อ – Noodle House</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* สไตล์เฉพาะหน้าแอดมิน */
+    .table-wrap {
+      overflow-x: auto;
+      background: var(--color-white);
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    #ordersTable {
+      width: 100%;
+      min-width: 960px;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+    #ordersTable th,
+    #ordersTable td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--color-border);
+    }
+    #ordersTable thead th {
+      position: sticky;
+      top: 0;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      white-space: nowrap;
+      color: var(--color-text);
+      background: var(--color-yellow-soft);
+      border-bottom: 2px solid var(--color-yellow);
+    }
+    #ordersTable tbody tr:nth-child(even) { background: var(--color-cream); }
+    #ordersTable tbody tr:hover { background: var(--color-yellow-soft); }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="logo">Noodle House</a>
+      <span>ระบบจัดการคำสั่งซื้อ</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section__header">
+          <h1>คำสั่งซื้อทั้งหมด</h1>
+          <p>แสดงรายการล่าสุดก่อน</p>
+        </div>
+
+        <div class="table-wrap">
+          <table id="ordersTable">
+            <thead>
+              <tr>
+                <th>วันที่และเวลา</th>
+                <th>Order ID</th>
+                <th>ชื่อลูกค้า</th>
+                <th>เบอร์โทร</th>
+                <th>ที่อยู่จัดส่ง</th>
+                <th>รายการสินค้า</th>
+                <th>จำนวน</th>
+                <th>จำนวนเงินรวม</th>
+                <th>สถานะ</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

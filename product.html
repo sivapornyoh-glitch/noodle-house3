@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>สินค้าทั้งหมด – Noodle House</title>
+  <meta name="description" content="เลือกซื้อบะหมี่กึ่งสำเร็จรูป Noodle House ทุกรสชาติ">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* สไตล์เฉพาะหน้าสินค้า */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-1);
+      margin-bottom: var(--space-4);
+    }
+    @media (max-width: 480px) {
+      .filter-bar .btn { width: auto; flex: 1 1 auto; padding-inline: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="logo">Noodle House</a>
+      <nav aria-label="เมนูหลัก">
+        <ul class="nav">
+          <li><a href="index.html">หน้าแรก</a></li>
+          <li><a href="product.html" class="active">สินค้า</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section__header">
+          <h1>สินค้าทั้งหมด</h1>
+          <p>เลือกรสชาติที่ใช่ แล้วสั่งซื้อได้เลย</p>
+        </div>
+
+        <!-- ปุ่มกรอง: script.js ผูกการทำงานผ่าน data-filter -->
+        <div id="filter-bar" class="filter-bar" role="group" aria-label="กรองสินค้าตามสถานะ">
+          <button type="button" class="btn" data-filter="all" aria-pressed="true">ทั้งหมด</button>
+          <button type="button" class="btn btn--outline" data-filter="Available" aria-pressed="false">Available</button>
+          <button type="button" class="btn btn--outline" data-filter="Out of Stock" aria-pressed="false">Out of Stock</button>
+        </div>
+
+        <!-- การ์ดสินค้า: script.js render ลงใน #productGrid -->
+        <div id="product-list">
+          <div id="productGrid" class="product-grid"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <a href="index.html" class="logo">Noodle House</a>
+      <p>อร่อยง่าย ได้ทุกวัน</p>
+      <small>&copy; 2026 Noodle House. สงวนลิขสิทธิ์</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
